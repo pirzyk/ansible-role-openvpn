@@ -1,8 +1,8 @@
 ---
 
-- name: client | Ensure /etc/openvpn/client exists
+- name: "Ensure {{ openvpn_configuration_directory }} exists"
   ansible.builtin.file:
-    path: /etc/openvpn/client
+    path: "{{ openvpn_configuration_directory }}"
     state: directory
     owner: root
     group: "{{ openvpn_group }}"
