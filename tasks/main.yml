@@ -29,8 +29,8 @@
     dest: /etc/rc.conf
     regexp: '^\s*openvpn_configfile\s*=(.*)$'
     line: 'openvpn_configfile="{{ openvpn_configuration_directory }}/{{ openvpn_role }}.conf"'
-  when: ansible_os_family == "FreeBSD"
-  notify: restart openvpn
+  when: ansible_os_family == 'FreeBSD'
+  notify: Restart openvpn
 
 - name: Start and enable openvpn
   ansible.builtin.service:
