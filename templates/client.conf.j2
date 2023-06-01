@@ -3,7 +3,7 @@
 {{ openvpn_role }}
 dev {{ openvpn_device }}
 proto {{ openvpn_proto }}
-remote {{ openvpn_client_server }} {{ openvpn_port }} {{ openvpn_proto }}
+remote {{ openvpn_client_server }} {{ openvpn_port }}
 user {{ openvpn_user }}
 group {{ openvpn_group }}
 tls-auth {{ openvpn_configuration_directory }}/ta.key 1
