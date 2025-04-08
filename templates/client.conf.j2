@@ -10,6 +10,8 @@ tls-auth {{ openvpn_configuration_directory }}/ta.key 1
 ca {{ openvpn_ca }}
 cert {{ openvpn_cert }}
 key {{ openvpn_key }}
+{% if openvpn_server_fingerprint is defined %}peer-fingerprint {{ openvpn_server_fingerprint }}
+{% endif %}
 {% for item in openvpn_options | default(default_openvpn_options[openvpn_role]) %}
 {{ item }}
 {% endfor %}

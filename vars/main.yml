@@ -22,16 +22,12 @@ _openvpn_user:
   default: nobody
   FreeBSD: openvpn
 
-openvpn_user: "{{ _openvpn_user[ansible_os_family] | default(_openvpn_user['default']) }}"
-
 _openvpn_group:
   default: nobody
   Debian: nogroup
   FreeBSD: openvpn
   RedHat: &redhat_group openvpn
   Rocky: *redhat_group
-
-openvpn_group: "{{ _openvpn_group[ansible_os_family] | default(_openvpn_group['default']) }}"
 
 _openvpn_configuration_directory:
   client:
