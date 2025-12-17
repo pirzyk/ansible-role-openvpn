@@ -27,8 +27,6 @@ molecule:
         tag: "bookworm"
       - image: "debian"
         tag: "bullseye"
-      - image: "ubuntu"
-        tag: "focal"
 
 galaxy:
   image: python:3.13
