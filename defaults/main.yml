@@ -10,8 +10,8 @@ openvpn_role: server
 # openvpn_role: client
 # openvpn_client_server: vpn.example.com
 
-openvpn_user: "{{ _openvpn_user[ansible_os_family] | default(_openvpn_user['default']) }}"
-openvpn_group: "{{ _openvpn_group[ansible_os_family] | default(_openvpn_group['default']) }}"
+openvpn_user: "{{ _openvpn_user[ansible_facts['os_family']] | default(_openvpn_user['default']) }}"
+openvpn_group: "{{ _openvpn_group[ansible_facts['os_family']] | default(_openvpn_group['default']) }}"
 
 openvpn_device: 'tun'
 openvpn_proto: 'udp'
