@@ -21,11 +21,11 @@
 - name: create ccd/host files
   ansible.builtin.template:
     src: ccd.conf.j2
-    dest: "{{ openvpn_configuration_directory }}/ccd/{{ item }}"
+    dest: "{{ openvpn_configuration_directory }}/ccd/{{ item.key }}"
     owner: root
     group: "{{ openvpn_group }}"
     mode: "0640"
-  with_items: "{{ ccd_hosts }}"
+  loop: "{{ ccd_hosts | dict2items }}"
 
 - name: server | Place server.conf
   ansible.builtin.template:

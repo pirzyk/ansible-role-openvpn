@@ -2,6 +2,6 @@
 # Ansible managed
 #
 
-{% for line in ccd_hosts[item] %}
+{% for line in ccd_hosts[item.key] %}
 {{ line }}
 {% endfor %}
