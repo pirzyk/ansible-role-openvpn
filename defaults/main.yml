@@ -21,6 +21,11 @@ openvpn_cert: "{{ openvpn_configuration_directory }}/{{ openvpn_role }}.crt"
 openvpn_key: "{{ openvpn_configuration_directory }}/{{ openvpn_role }}.key"
 openvpn_dh: "{{ openvpn_configuration_directory }}/dh.pem"
 
+# Support peer-fingerprint(s) in the config files.
+#   Server needs to support multiple to handle the certificate rotation case as well as other HA environments
+#openvpn_server_fingerprints: []
+#openvpn_clients_fingerprint: []
+
 default_openvpn_options:
   client:
     - 'tls-client'

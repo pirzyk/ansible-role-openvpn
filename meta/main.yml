@@ -17,6 +17,7 @@ galaxy_info:
     - name: FreeBSD
       versions:
         - 14.3
+        - 14.4
 
   galaxy_tags:
     - openvpn
